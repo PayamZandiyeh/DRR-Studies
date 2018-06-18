@@ -1,0 +1,14 @@
+name: drr
+channels:
+  - clinicalgraphics
+  - conda-forge
+dependencies:
+  - python=2.7
+  - clinicalgraphics::vtk
+  - conda-forge::itk
+  - numpy
+  - packaging
+  - click
+  - future
+  - nose
+
