@@ -44,7 +44,7 @@ originOutput = [delta,delta,-200.0]
 directionOutput = np.matrix([[  1.,  0.,  0.],
                              [  0.,  1.,  0.],
                              [  0.,  0.,  1.]])
-
+#%%
 
 for counter_x in range(0,5,5): # Rotation in x
     for counter_y in range(0,5,5): # Rotation in y
@@ -55,8 +55,8 @@ for counter_x in range(0,5,5): # Rotation in x
             if not os.path.exists(output_directory): # If the directory is not existing , create one. 
                 os.mkdir(output_directory) # Make the directory
             filetype = '.nii' # type of output image ... it can be nifti or dicom
-            filename = 'rx_'+str(int(rot[0])) + 'ry_'+str(int(rot[1])) + 'rz_'+str(int(rot[2])) # makes the complete path
-            output_filename = os.path.join(output_directory,filename,filetype) # creating the output directory where all the images are stored. 
+            filename = 'rx_'+str(int(rot[0])) + 'ry_'+str(int(rot[1])) + 'rz_'+str(int(rot[2]))+filetype # makes the complete path
+            output_filename = os.path.join(output_directory,filename) # creating the output directory where all the images are stored.
             main_functions.drr(inputImage,output_filename,rot,t,focalPoint,originOutput,sizeOutput,cor,spaceOutput,directionOutput,threshold,InputImageType,OutputImageType,verbose) # creating drr. 
             
             
